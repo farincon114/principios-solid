@@ -5,21 +5,21 @@ import abc
 
 #3 Liskov Substitution Principle INCORRECTO
 
-class Metodos_pago(abc.ABC):
+class Metodos_pago(abc.ABC):      #creamos una clase abstracta para metodos de pago./define la orden de pago y codigo de seguridad para las tarjetas
     abc.abstractclassmethod
     def Pago(self,order,codigo_seguridad):
         pass
 
-class CreditoMetodosDePago(Metodos_pago):
+class CreditoMetodosDePago(Metodos_pago):    # creamos una herencia de metodos de pago/asignamos la def a pago con t. credito
     def Pago(self, order, codigo_seguridad):
         return super().Pago(order, codigo_seguridad)
 
-class DebitoMetodosDePago(Metodos_pago):
+class DebitoMetodosDePago(Metodos_pago):      # creamos una herencia de metodos de pago/asignamos la def a pago con t. debito
     def Pago(self, order, codigo_seguridad):
         return super().Pago(order, codigo_seguridad)
 
 
-class PseMetodosdePago(Metodos_pago):
+class PseMetodosdePago(Metodos_pago):      # creamos una herencia de metodos de pago/asignamos la def a pago con pse
     def Pago(self, order, codigo_seguridad):
         return super().Pago(order, codigo_seguridad)
 
@@ -33,24 +33,24 @@ con correo electronico estamos faltando al principio de sustitucion de liskov'''
 #3 Liskov Substitution Principle CORRECTO
 
 
-class Metodos_pago(abc.ABC):
+class Metodos_pago(abc.ABC):   #creamos una clase abstracta para metodos de pago./define la orden de pago
     abc.abstractclassmethod
     def Pago(self,order):
         pass
 
-class CreditoMetodosDePago(Metodos_pago):
-    def  __init__(self,codigo_seguridad):
+class CreditoMetodosDePago(Metodos_pago):                 # creamos una herencia de metodos de pago/asignamos la def a pago con t. credito
+    def  __init__(self,codigo_seguridad):                 #esta def, asigna los datos de seguidad para la tarjeta
         self.codigo_seguridad = codigo_seguridad
         
-    def Pago(self, order,):
+    def Pago(self, order,):                               #esta def, asigna la orden de pago
         return super().Pago(order)
 
 
-class DebitoMetodosDePago(Metodos_pago):
-    def  __init__(self,codigo_seguridad):
-        self.codigo_seguridad = codigo_seguridad
+class DebitoMetodosDePago(Metodos_pago):                 # creamos una herencia de metodos de pago/asignamos la def a pago con pse
+    def  __init__(self,codigo_seguridad):                #esta def, asigna los datos de seguidad para la tarjeta
+        self.codigo_seguridad = codigo_seguridad         
 
-    def Pago(self, order):
+    def Pago(self, order):                               #esta def, asigna la orden de pago
         return super().Pago(order)
 
 
