@@ -31,12 +31,12 @@ class Cliente:
         self.nombre = nombre
         self.apellido = apellido
 
-    def tarjetas_credito(self,numero:int, fecha:int/int, cvc:int):      #se esta asignando otra responsabilidad en la misma clase asignar los metodos de pago del cliente
+    def Credito_Pago(self,numero:int, fecha:int/int, cvc:int):      #se esta asignando otra responsabilidad en la misma clase asignar los metodos de pago del cliente
             self.numero = numer
             self.fecha = fecha
             self.cvc = cvc
             
-    def tarjetas_debito(self):
+    def Debtito_Pago(self):
             pass   
 
   
